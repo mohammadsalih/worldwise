@@ -1,10 +1,17 @@
 // "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=0&longitude=0"
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import styles from "./Form.module.css";
+import { useCities } from "../../contexts/CitiesContext";
+import { getLocationData } from "../../helpers/Helpers";
+
+import { useUrlPosition } from "../../hooks/useUrlPosition";
+
 import Button from "../Button/Button";
 import BackButton from "../BackButton/BackButton";
+
+import styles from "./Form.module.css";
+import Spinner from "../spinner/spinner";
 
 export function convertToEmoji(countryCode) {
   const codePoints = countryCode
@@ -15,13 +22,30 @@ export function convertToEmoji(countryCode) {
 }
 
 function Form() {
-  const [cityName, setCityName] = useState("");
+  const { setCities, isLoading } = useCities();
+  const [lat, lng] = useUrlPosition();
+
+  const [isLoadingGeoCoding, setIsLoadingGeoCoding] = useState(true);
   const [country, setCountry] = useState("");
+  const [cityName, setCityName] = useState("");
   const [date, setDate] = useState(new Date());
   const [notes, setNotes] = useState("");
 
-  return (
-    <form className={styles.form}>
+  useEffect(
+    function (state) {
+      async function callback() {
+        console.log(await getLocationData(lat, lng));
+        setIsLoadingGeoCoding(false);
+      }
+      callback();
+    },
+    [lat, lng]
+  );
+
+  return isLoadingGeoCoding ? (
+    <Spinner />
+  ) : (
+    <form form className={styles.form}>
       <div className={styles.row}>
         <label htmlFor="cityName">City name</label>
         <input

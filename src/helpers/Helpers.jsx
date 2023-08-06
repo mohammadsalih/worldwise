@@ -49,7 +49,7 @@ export async function getLocationData(lat, lng) {
     const countryData = await flagResponse.json();
 
     // Extract the country flag emoji from the API response
-    const countryFlagEmoji = countryData.flags.emoji;
+    const countryFlagEmoji = countryData.flags.svg;
 
     // Get the current date and time
     const date = new Date().toISOString();
@@ -60,6 +60,7 @@ export async function getLocationData(lat, lng) {
       country: geoData.countryName,
       emoji: countryFlagEmoji,
       date,
+      countryCode,
       position: {
         lat,
         lng,
