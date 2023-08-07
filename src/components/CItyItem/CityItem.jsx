@@ -12,7 +12,7 @@ const formatDate = (date) =>
   }).format(new Date(date));
 
 function CityItem({ cityData }) {
-  const { currentCity } = useCities();
+  const { currentCity, deleteCity } = useCities();
 
   const {
     cityName,
@@ -22,6 +22,12 @@ function CityItem({ cityData }) {
     id,
     position: { lat, lng },
   } = cityData;
+
+  function handleDeleteCity(e) {
+    e.preventDefault();
+    deleteCity(id);
+    console.log("mazaar deleted");
+  }
 
   return (
     <li>
@@ -37,7 +43,13 @@ function CityItem({ cityData }) {
 
         <time className={styles.date}>({formatDate(date)})</time>
 
-        <button className={styles.deleteBtn}> &times;</button>
+        <button
+          className={styles.deleteBtn}
+          onClick={handleDeleteCity}
+        >
+          {" "}
+          &times;
+        </button>
       </Link>
     </li>
   );

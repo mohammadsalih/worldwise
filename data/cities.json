@@ -1,184 +1,40 @@
 {
   "cities": [
     {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "https://flagcdn.com/pt.svg",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
-      "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
-      },
-      "id": 73930385
-    },
-    {
-      "cityName": "Madrid",
-      "country": "Spain",
-      "emoji": "https://flagcdn.com/es.svg",
-      "date": "Mon Aug 07 2023 17:48:53 GMT+0300 (Arabian Standard Time)",
-      "notes": "check out my other websites , MOS",
-      "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
-      },
-      "id": 17806751
-    },
-    {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "https://flagcdn.com/de.svg",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": 98443197
-    },
-    {
-      "cityName": "Greater London",
-      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
-      "emoji": "https://flagcdn.com/gb.svg",
-      "date": "2023-08-07T15:40:38.573Z",
+      "cityName": "Athlone",
+      "country": "Ireland",
+      "emoji": "https://flagcdn.com/ie.svg",
+      "date": "2023-08-07T18:49:51.780Z",
       "notes": "",
       "position": {
-        "lat": "51.52241608253256",
-        "lng": "-0.17578125"
+        "lat": "53.396432127095984",
+        "lng": "-8.107910156250002"
       },
-      "id": 1691422840080
+      "id": 98443198
     },
     {
-      "cityName": "Melton Mowbray",
-      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
-      "emoji": "https://flagcdn.com/gb.svg",
-      "date": "2023-08-07T15:40:50.166Z",
-      "notes": "asdfa",
-      "position": {
-        "lat": "52.736291655910925",
-        "lng": "-1.0107421875000002"
-      },
-      "id": 1691422852613
-    },
-    {
-      "cityName": "Paudy",
-      "country": "France",
-      "emoji": "https://flagcdn.com/fr.svg",
-      "date": "2023-08-07T15:45:17.054Z",
-      "notes": "sdasda",
-      "position": {
-        "lat": "47.040182144806664",
-        "lng": "1.9335937500000002"
-      },
-      "id": 1691423120134
-    },
-    {
-      "cityName": "Thiais",
-      "country": "France",
-      "emoji": "https://flagcdn.com/fr.svg",
-      "date": "2023-08-07T15:55:45.050Z",
-      "notes": "ma man",
-      "position": {
-        "lat": "48.76343113791796",
-        "lng": "2.39501953125"
-      },
-      "id": 1691423751863
-    },
-    {
-      "cityName": "Coudray-au-Perche",
-      "country": "France",
-      "emoji": "https://flagcdn.com/fr.svg",
-      "date": "2023-08-07T15:56:16.270Z",
-      "notes": "",
-      "position": {
-        "lat": "48.23930899024907",
-        "lng": "0.8349609375000001"
-      },
-      "id": 1691423779179
-    },
-    {
-      "cityName": "Coudray-au-Perche",
-      "country": "France",
-      "emoji": "https://flagcdn.com/fr.svg",
-      "date": "2023-08-07T15:56:26.801Z",
-      "notes": "",
-      "position": {
-        "lat": "48.23930899024907",
-        "lng": "0.8349609375000001"
-      },
-      "id": 1691423788061
-    },
-    {
-      "cityName": "Amberieux",
-      "country": "France",
-      "emoji": "https://flagcdn.com/fr.svg",
-      "date": "2023-08-07T15:56:37.731Z",
-      "notes": "ma man",
-      "position": {
-        "lat": "45.98169518512228",
-        "lng": "4.899902343750001"
-      },
-      "id": 1691423804645
-    },
-    {
-      "cityName": "Trois-Fontaines-l'Abbaye",
-      "country": "France",
-      "emoji": "https://flagcdn.com/fr.svg",
-      "date": "2023-08-07T15:57:53.213Z",
-      "notes": "yow",
-      "position": {
-        "lat": "48.705462895790575",
-        "lng": "4.94384765625"
-      },
-      "id": 1691423804646
-    },
-    {
-      "cityName": "Balad",
+      "cityName": "As Sulaymaniyah",
       "country": "Iraq",
       "emoji": "https://flagcdn.com/iq.svg",
-      "date": "2023-08-07T16:04:24.487Z",
-      "notes": "ma cun",
-      "position": {
-        "lat": "34.016241889667036",
-        "lng": "43.94531250000001"
-      },
-      "id": 1691423804647
-    },
-    {
-      "cityName": "A Dakhla Oasis",
-      "country": "Egypt",
-      "emoji": "https://flagcdn.com/eg.svg",
-      "date": "2023-08-07T16:06:25.670Z",
+      "date": "2023-08-07T19:05:12.573Z",
       "notes": "",
       "position": {
-        "lat": "26.27371402440643",
-        "lng": "29.179687500000004"
+        "lat": "35.496456056584165",
+        "lng": "45.37353515625001"
       },
-      "id": 1691423804648
+      "id": 98443199
     },
     {
-      "cityName": "Cherdyn’",
-      "country": "Russian Federation (the)",
-      "emoji": "https://flagcdn.com/ru.svg",
-      "date": "2023-08-07T16:06:56.653Z",
-      "notes": "yo nig",
+      "cityName": "Erbil",
+      "country": "Iraq",
+      "emoji": "https://flagcdn.com/iq.svg",
+      "date": "2023-08-07T19:05:27.511Z",
+      "notes": "maz maz",
       "position": {
-        "lat": "60.58696734225869",
-        "lng": "56.77734375000001"
+        "lat": "36.18000806322456",
+        "lng": "44.00848388671876"
       },
-      "id": 1691423804649
-    },
-    {
-      "cityName": "Evenkiysky District",
-      "country": "Russian Federation (the)",
-      "emoji": "https://flagcdn.com/ru.svg",
-      "date": "2023-08-07T16:08:36.354Z",
-      "notes": "",
-      "position": {
-        "lat": "64.54844014422517",
-        "lng": "99.140625"
-      },
-      "id": 1691423804650
+      "id": 98443200
     }
   ]
 }

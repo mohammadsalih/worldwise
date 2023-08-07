@@ -18,7 +18,7 @@ import Message from "../Message/Message";
 function Form() {
   const navigate = useNavigate();
 
-  const { onAddCity, isLoading } = useCities();
+  const { addCity, isLoading } = useCities();
   const [lat, lng] = useUrlPosition();
 
   const [isLoadingGeoCoding, setIsLoadingGeoCoding] = useState(true);
@@ -48,7 +48,7 @@ function Form() {
       },
     };
 
-    await onAddCity(data);
+    await addCity(data);
 
     navigate("/app/cities");
   }
