@@ -26,13 +26,15 @@
 }
 
 .city h3 {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
   font-size: 1.9rem;
 }
 
-.city h3 span {
-  margin-right: 1rem;
-
-  font-size: 3.2rem;
+.city h3 img {
+  display: inline-block;
+  width: 5rem;
 }
 
 .city p {

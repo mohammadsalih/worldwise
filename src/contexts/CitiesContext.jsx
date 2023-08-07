@@ -5,7 +5,7 @@ import {
   useState,
 } from "react";
 
-import { fetchData, API } from "../helpers/Helpers";
+import { fetchData, API, postData } from "../helpers/Helpers";
 
 const CitiesContext = createContext();
 
@@ -21,13 +21,24 @@ function CitiesProvider({ children }) {
     setCurrentCity(await fetchData(API, setIsLoading, "cities", id));
   }
 
+  async function handleAddCity(data) {
+    await postData(API, "cities", data, setIsLoading);
+    setCities(await fetchData(API, setIsLoading, "cities"));
+  }
+
   useEffect(function () {
     fetchCities();
   }, []);
 
   return (
     <CitiesContext.Provider
-      value={{ cities, isLoading, currentCity, getCity }}
+      value={{
+        cities,
+        isLoading,
+        currentCity,
+        getCity,
+        onAddCity: handleAddCity,
+      }}
     >
       {children}
     </CitiesContext.Provider>
