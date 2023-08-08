@@ -22,7 +22,7 @@ function LoginPage() {
 
   useEffect(() => {
     if (isAuthenticated) navigate("/app");
-  }, [isAuthenticated]);
+  }, [isAuthenticated, navigate]);
 
   return (
     <main className={styles.login}>

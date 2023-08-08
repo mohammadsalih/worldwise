@@ -35,6 +35,18 @@
         "lng": "45.438766479492195"
       },
       "id": 98443201
+    },
+    {
+      "cityName": "Farnsfield",
+      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "emoji": "https://flagcdn.com/gb.svg",
+      "date": "2023-08-08T15:06:34.990Z",
+      "notes": "",
+      "position": {
+        "lat": "53.10721669189343",
+        "lng": "-1.0766601562500002"
+      },
+      "id": 98443202
     }
   ]
 }

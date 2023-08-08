@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 
 import { useCities } from "../../contexts/CitiesContext";
-import Button from "../Button/Button";
 
 import styles from "./City.module.css";
 import Spinner from "../spinner/spinner";
@@ -26,7 +25,7 @@ function City() {
     function () {
       getCity(id);
     },
-    [id]
+    [id, getCity]
   );
 
   if (isLoading) {

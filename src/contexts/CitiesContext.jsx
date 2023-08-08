@@ -1,5 +1,6 @@
 import {
   createContext,
+  useCallback,
   useContext,
   useEffect,
   useReducer,
@@ -67,13 +68,14 @@ function CitiesProvider({ children }) {
     dispatch({ type: actionType, payload: response });
   }
 
-  async function getCities() {
-    loadData("cities/loaded");
-  }
+  const getCity = useCallback(
+    async function getCity(id) {
+      if (id === currentCity.id) return;
 
-  async function getCity(id) {
-    loadData("city/loaded", id);
-  }
+      loadData("city/loaded", id);
+    },
+    [currentCity.id]
+  );
 
   async function addCity(data) {
     loadData("cities/loaded", null, null, data);
@@ -84,6 +86,10 @@ function CitiesProvider({ children }) {
   }
 
   useEffect(function () {
+    async function getCities() {
+      loadData("cities/loaded");
+    }
+
     getCities();
   }, []);
 
