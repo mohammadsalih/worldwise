@@ -11,8 +11,8 @@ import { useUrlPosition } from "../../hooks/useUrlPosition";
 import Button from "../Button/Button";
 import BackButton from "../BackButton/BackButton";
 
+import Spinner from "../Spinner/Spinner";
 import styles from "./Form.module.css";
-import Spinner from "../spinner/spinner";
 import Message from "../Message/Message";
 
 function Form() {

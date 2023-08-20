@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useCities } from "../../contexts/CitiesContext";
 
 import styles from "./City.module.css";
-import Spinner from "../spinner/spinner";
+import Spinner from "../Spinner/Spinner";
 import BackButton from "../BackButton/BackButton";
 
 const formatDate = (date) =>

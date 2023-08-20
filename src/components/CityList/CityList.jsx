@@ -1,7 +1,6 @@
 import CityItem from "../CItyItem/CityItem";
 import Spinner from "../Spinner/Spinner";
 import Message from "../Message/Message";
-
 import styles from "./CityList.module.css";
 import { useCities } from "../../contexts/CitiesContext";
 
