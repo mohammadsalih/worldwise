@@ -1,15 +1,14 @@
 import { NavLink } from 'react-router-dom';
+import Logo from '../components/Logo';
 
-import styles from './AppNav.module.css';
+import styles from './PageNav.module.css';
 
 function AppNav() {
   return (
     <nav className={styles.nav}>
-      <ul>
-        <li>
-          <NavLink to='/'>home</NavLink>
-        </li>
+      <Logo />
 
+      <ul>
         <li>
           <NavLink to='/product'>product</NavLink>
         </li>
@@ -19,7 +18,12 @@ function AppNav() {
         </li>
 
         <li>
-          <NavLink to='/login'>login</NavLink>
+          <NavLink
+            to='/login'
+            className={styles.ctaLink}
+          >
+            login
+          </NavLink>
         </li>
       </ul>
     </nav>

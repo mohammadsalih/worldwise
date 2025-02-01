@@ -9,6 +9,11 @@
   cursor: pointer;
 }
 
+.btn a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .primary {
   font-weight: 700;
   background-color: var(--color-brand--2);
@@ -31,5 +36,6 @@
   transform: translateX(-50%);
   background-color: var(--color-brand--2);
   color: var(--color-dark--1);
-  box-shadow: 0 0.4rem 1.2rem rgba(36, 42, 46, 0.16);
+  box-shadow: 0 0.4rem 1.2rem
+    rgba(36, 42, 46, 0.16);
 }

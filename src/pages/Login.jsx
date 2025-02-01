@@ -1,6 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 import styles from './Login.module.css';
+
+import PageNav from '../components/PageNav';
+import Button from '../components/Button';
 
 export default function Login() {
   // PRE-FILL FOR DEV PURPOSES
@@ -10,8 +14,18 @@ export default function Login() {
   const [password, setPassword] =
     useState('qwerty');
 
+  const navigate = useNavigate();
+
+  function handleLogin(e) {
+    e.preventDefault(); // Prevent page refresh
+
+    navigate('/app');
+  }
+
   return (
     <main className={styles.login}>
+      <PageNav />
+
       <form className={styles.form}>
         <div className={styles.row}>
           <label htmlFor='email'>
@@ -42,7 +56,9 @@ export default function Login() {
         </div>
 
         <div>
-          <button>Login</button>
+          <Button handler={handleLogin}>
+            login
+          </Button>
         </div>
       </form>
     </main>

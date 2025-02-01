@@ -1,11 +1,11 @@
 import styles from './Homepage.module.css';
 
-import AppNav from '../components/AppNav';
+import PageNav from '../components/PageNav';
 
 export default function Homepage() {
   return (
     <main className={styles.homepage}>
-      <AppNav />
+      <PageNav />
 
       <section>
         <h1>
