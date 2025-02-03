@@ -1,3 +1,4 @@
+import { Outlet } from 'react-router-dom';
 import Logo from '../components/Logo';
 import AppNav from './AppNav';
 
@@ -10,7 +11,7 @@ function Sidebar() {
 
       <AppNav />
 
-      <p>cites list</p>
+      <Outlet />
 
       <footer className={styles.footer}>
         © Copyright 2025 by WorldWise Inc.

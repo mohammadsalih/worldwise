@@ -19,7 +19,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route
-          path='/'
+          index
           element={<Homepage />}
         />
 
@@ -40,7 +40,26 @@ function App() {
         <Route
           path='app'
           element={<AppLayout />}
-        />
+        >
+          <Route
+            index
+            element={<p>list of cities</p>}
+          />
+
+          <Route
+            path='cities'
+            element={<p>list of cities</p>}
+          />
+
+          <Route
+            path='countries'
+            element={<p>list of countries</p>}
+          />
+          <Route
+            path='form'
+            element={<p>add city form</p>}
+          />
+        </Route>
 
         <Route
           path='*'
