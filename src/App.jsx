@@ -15,6 +15,8 @@ import PageNotFound from './pages/PageNotFound';
 import AppLayout from './pages/AppLayout';
 import CityList from './components/CityList';
 import { useEffect, useState } from 'react';
+import CountryList from './components/CountryList';
+import City from './components/City';
 
 const BASE_URL = 'http://localhost:8000';
 
@@ -22,6 +24,16 @@ function App() {
   const [cities, setCities] = useState([]);
   const [isLoading, setIsLoading] =
     useState(false);
+
+  const countries = cities.reduce(
+    (acc, cur) =>
+      acc
+        .map((item) => item.country)
+        .includes(cur.country)
+        ? acc
+        : (acc = [...acc, cur]),
+    [],
+  );
 
   useEffect(() => {
     async function callBack() {
@@ -99,8 +111,18 @@ function App() {
           />
 
           <Route
+            path='cities/:id'
+            element={<City cities={cities} />}
+          />
+
+          <Route
             path='countries'
-            element={<p>list of countries</p>}
+            element={
+              <CountryList
+                countries={countries}
+                isLoading={isLoading}
+              />
+            }
           />
           <Route
             path='form'

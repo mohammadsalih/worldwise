@@ -1,13 +1,34 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-undef */
+import { useParams } from 'react-router-dom';
 import styles from './City.module.css';
+import Spinner from './Spinner';
 
-function City() {
+const formatDate = (date) =>
+  new Intl.DateTimeFormat('en', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(new Date(date));
+
+function City({ cities }) {
+  const { id } = useParams();
+
+  const currentCity = cities
+    ?.filter((city) =>
+      city.id === Number(id) ? city : '',
+    )
+    ?.at(0);
+
   // TEMP DATA
-  const currentCity = {
-    cityName: 'Lisbon',
-    emoji: '🇵🇹',
-    date: '2027-10-31T15:59:59.138Z',
-    notes: 'My favorite city so far!',
-  };
+  // const currentCity = {
+  //   cityName: 'Lisbon',
+  //   emoji: '🇵🇹',
+  //   date: '2027-10-31T15:59:59.138Z',
+  //   notes: 'My favorite city so far!',
+  // };
+
+  if (!currentCity) <Spinner />;
 
   const { cityName, emoji, date, notes } =
     currentCity;
@@ -44,9 +65,7 @@ function City() {
         </a>
       </div>
 
-      <div>
-        <ButtonBack />
-      </div>
+      <div>{/* <ButtonBack /> */}</div>
     </div>
   );
 }

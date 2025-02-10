@@ -25,6 +25,30 @@
       "id": 17806751
     },
     {
+      "cityName": "Monaco",
+      "country": "italy",
+      "emoji": "🏁",
+      "date": "2027-01-05T08:22:53.976Z",
+      "notes": "",
+      "position": {
+        "lat": 30.46635901755316,
+        "lng": -2.7133789062500004
+      },
+      "id": 98263489
+    },
+    {
+      "cityName": "resosc",
+      "country": "italy",
+      "emoji": "🏁",
+      "date": "2027-02-06T08:22:53.976Z",
+      "notes": "",
+      "position": {
+        "lat": 31.46635901755316,
+        "lng": -2.3133789062500004
+      },
+      "id": 98262289
+    },
+    {
       "cityName": "Berlin",
       "country": "Germany",
       "emoji": "🇩🇪",
@@ -35,6 +59,18 @@
         "lng": 13.376933665713324
       },
       "id": 98443197
+    },
+    {
+      "cityName": "lkdf",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "date": "2027-02-12T09:24:11.863Z",
+      "notes": "Amazing 😃",
+      "position": {
+        "lat": 52.53586782505711,
+        "lng": 13.376933665713324
+      },
+      "id": 98443133
     }
   ]
 }
