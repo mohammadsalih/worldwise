@@ -13,6 +13,8 @@ const formatDate = (date) =>
 
 function City({ cities }) {
   const { id } = useParams();
+  const all = useParams();
+  console.log(all);
 
   const currentCity = cities
     ?.filter((city) =>
@@ -20,15 +22,7 @@ function City({ cities }) {
     )
     ?.at(0);
 
-  // TEMP DATA
-  // const currentCity = {
-  //   cityName: 'Lisbon',
-  //   emoji: '🇵🇹',
-  //   date: '2027-10-31T15:59:59.138Z',
-  //   notes: 'My favorite city so far!',
-  // };
-
-  if (!currentCity) <Spinner />;
+  if (!currentCity) return <Spinner />;
 
   const { cityName, emoji, date, notes } =
     currentCity;

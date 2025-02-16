@@ -1,22 +1,25 @@
+import { useEffect, useState } from 'react';
 import {
   BrowserRouter,
+  Navigate,
   Route,
   Routes,
 } from 'react-router-dom';
 
 import Homepage from './pages/Homepage';
 
-import Login from './pages/Login';
-
 import Product from './pages/Product';
 import Pricing from './pages/Pricing';
 
+import Login from './pages/Login';
+
 import PageNotFound from './pages/PageNotFound';
+
 import AppLayout from './pages/AppLayout';
-import CityList from './components/CityList';
-import { useEffect, useState } from 'react';
 import CountryList from './components/CountryList';
+import CityList from './components/CityList';
 import City from './components/City';
+import Form from './components/Form';
 
 const BASE_URL = 'http://localhost:8000';
 
@@ -93,9 +96,9 @@ function App() {
           <Route
             index
             element={
-              <CityList
-                cities={cities}
-                isLoading={isLoading}
+              <Navigate
+                replace
+                to={'cities'}
               />
             }
           />
@@ -126,7 +129,7 @@ function App() {
           />
           <Route
             path='form'
-            element={<p>add city form</p>}
+            element={<Form />}
           />
         </Route>
 
