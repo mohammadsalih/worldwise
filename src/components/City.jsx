@@ -3,6 +3,7 @@
 import { useParams } from 'react-router-dom';
 import styles from './City.module.css';
 import Spinner from './Spinner';
+import { useCitiesContext } from '../context/citiesContext';
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat('en', {
@@ -11,14 +12,13 @@ const formatDate = (date) =>
     year: 'numeric',
   }).format(new Date(date));
 
-function City({ cities }) {
+function City() {
+  const { cities } = useCitiesContext();
   const { id } = useParams();
-  const all = useParams();
-  console.log(all);
 
   const currentCity = cities
     ?.filter((city) =>
-      city.id === Number(id) ? city : '',
+      Number(city.id) === Number(id) ? city : '',
     )
     ?.at(0);
 

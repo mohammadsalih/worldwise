@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react';
 import {
   BrowserRouter,
   Navigate,
-  Route,
   Routes,
+  Route,
 } from 'react-router-dom';
 
 import Homepage from './pages/Homepage';
@@ -21,52 +20,7 @@ import CityList from './components/CityList';
 import City from './components/City';
 import Form from './components/Form';
 
-const BASE_URL = 'http://localhost:8000';
-
 function App() {
-  const [cities, setCities] = useState([]);
-  const [isLoading, setIsLoading] =
-    useState(false);
-
-  const countries = cities.reduce(
-    (acc, cur) =>
-      acc
-        .map((item) => item.country)
-        .includes(cur.country)
-        ? acc
-        : (acc = [...acc, cur]),
-    [],
-  );
-
-  useEffect(() => {
-    async function callBack() {
-      try {
-        setIsLoading(true);
-
-        const response = await fetch(
-          `${BASE_URL}/cities`,
-        );
-
-        if (!response.ok)
-          throw new Error(
-            `HTTP error! Status: ${response.status}`,
-          );
-
-        const data = await response.json();
-
-        setCities(data);
-      } catch (error) {
-        console.error(
-          'something went wrong with the connection : ' +
-            error,
-        );
-      } finally {
-        setIsLoading(false);
-      }
-    }
-    callBack();
-  }, [setCities, setIsLoading]);
-
   return (
     <BrowserRouter>
       <Routes>
@@ -105,27 +59,17 @@ function App() {
 
           <Route
             path='cities'
-            element={
-              <CityList
-                cities={cities}
-                isLoading={isLoading}
-              />
-            }
+            element={<CityList />}
           />
 
           <Route
             path='cities/:id'
-            element={<City cities={cities} />}
+            element={<City />}
           />
 
           <Route
             path='countries'
-            element={
-              <CountryList
-                countries={countries}
-                isLoading={isLoading}
-              />
-            }
+            element={<CountryList />}
           />
           <Route
             path='form'
