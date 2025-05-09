@@ -12,6 +12,8 @@ const formatDate = (date) =>
   }).format(new Date(date));
 
 function CityItem({ city }) {
+  const { currentCity } = useCitiesContext();
+
   const {
     cityName,
     emoji,
@@ -23,7 +25,11 @@ function CityItem({ city }) {
   return (
     <li>
       <Link
-        className={styles.cityItem}
+        className={`${styles.cityItem} ${
+          currentCity.id == id
+            ? styles['cityItem--active']
+            : ''
+        }`}
         to={`${id}?lat=${lat}&lng=${lng}`}
       >
         <span className={styles.emoji}>

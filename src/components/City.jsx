@@ -1,9 +1,9 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-undef */
 import { useParams } from 'react-router-dom';
 import styles from './City.module.css';
 import Spinner from './Spinner';
 import { useCitiesContext } from '../context/citiesContext';
+import BackButton from './BackButton';
+import { useEffect } from 'react';
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat('en', {
@@ -13,16 +13,17 @@ const formatDate = (date) =>
   }).format(new Date(date));
 
 function City() {
-  const { cities } = useCitiesContext();
+  const { currentCity, getCityById, isLoading } =
+    useCitiesContext();
   const { id } = useParams();
 
-  const currentCity = cities
-    ?.filter((city) =>
-      Number(city.id) === Number(id) ? city : '',
-    )
-    ?.at(0);
+  useEffect(() => {
+    getCityById(id);
+  }, [id]);
 
-  if (!currentCity) return <Spinner />;
+  if (isLoading) return <Spinner />;
+
+  const name = 'hey';
 
   const { cityName, emoji, date, notes } =
     currentCity;
@@ -59,7 +60,9 @@ function City() {
         </a>
       </div>
 
-      <div>{/* <ButtonBack /> */}</div>
+      <div>
+        <BackButton />
+      </div>
     </div>
   );
 }

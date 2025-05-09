@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {
   createContext,
   useContext,
@@ -14,6 +15,9 @@ const BASE_URL = 'http://localhost:8000';
 // Provider component
 function CitiesContextProvider({ children }) {
   const [cities, setCities] = useState([]);
+  const [currentCity, setCurrentCity] = useState(
+    {},
+  );
   const [isLoading, setIsLoading] =
     useState(false);
 
@@ -56,9 +60,38 @@ function CitiesContextProvider({ children }) {
     callBack();
   }, [setCities, setIsLoading]);
 
+  async function getCityById(id) {
+    try {
+      setIsLoading(true);
+
+      const response = await fetch(
+        `${BASE_URL}/cities/${id}`,
+      );
+
+      if (!response.ok)
+        throw new Error(
+          `HTTP error! Status: ${response.status}`,
+        );
+
+      const data = await response.json();
+
+      setCurrentCity(data);
+    } catch {
+      alert('there was an error loading data...');
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   return (
     <CitiesContext.Provider
-      value={{ cities, countries, isLoading }}
+      value={{
+        cities,
+        countries,
+        isLoading,
+        currentCity,
+        getCityById,
+      }}
     >
       {children}
     </CitiesContext.Provider>
