@@ -70,7 +70,7 @@ function Map() {
         lng: GeolocationPosition.lng,
       });
     }
-  }, [GeolocationPosition]);
+  }, [GeolocationPosition, goToForm]);
 
   return (
     <div className={styles.mapContainer}>
